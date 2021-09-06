@@ -1,0 +1,13 @@
+name: TwitchWhitelist
+version: ${project.version}
+main: tv.banko.twitchwhitelist.TwitchWhitelist
+authors: [ DerBanko ]
+description: Twitch Whitelist with command or channel points
+website: https://banko.tv
+
+commands:
+  wl:
+    description: Whitelist Command of TwitchWhitelist
+    aliases: [whitelist]
+  settings:
+    description: Settings of TwitchWhitelist
