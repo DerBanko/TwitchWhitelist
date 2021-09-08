@@ -14,6 +14,7 @@ import tv.banko.twitchwhitelist.whitelist.WhitelistType;
 import tv.banko.twitchwhitelist.whitelist.WhitelistUser;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.logging.Level;
 
@@ -35,10 +36,19 @@ public class Bot {
     }
 
     public void setCredential() {
+        if(Objects.equals(config.getAccessToken(), "")) {
+            TwitchWhitelist.getInstance().getLogger().warning("There is no access token set. Please set it to use the plugin.");
+            return;
+        }
+
         credential = new OAuth2Credential("twitch", config.getAccessToken());
     }
 
     public void connect() {
+
+        if(credential == null) {
+            setCredential();
+        }
 
         if(twitchClient != null) {
             return;

@@ -6,7 +6,7 @@
 
     <groupId>tv.banko</groupId>
     <artifactId>twitchwhitelist</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>TwitchWhitelist</name>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>com.github.twitch4j</groupId>
             <artifactId>twitch4j</artifactId>
-            <version>1.1.2</version>
+            <version>1.5.1</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
