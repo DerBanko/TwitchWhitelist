@@ -3,6 +3,7 @@ package tv.banko.twitchwhitelist.whitelist;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import tv.banko.twitchwhitelist.TwitchWhitelist;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class Whitelist {
     private final Map<UUID, WhitelistUser> map;
 
     public Whitelist() {
-        File dir = new File("./plugins/TwitchWhitelist/");
+        File dir = TwitchWhitelist.getInstance().getDataFolder();
 
         if(!dir.exists()) {
             dir.mkdirs();
