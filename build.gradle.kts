@@ -20,12 +20,6 @@ dependencies {
 }
 
 tasks {
-    shadowJar {
-        dependencies {
-            exclude(dependency("org.spigotmc:spigot-api:.*"))
-            exclude(dependency("net.md-5:*:.*"))
-        }
-    }
     jar {
         enabled = false
     }
