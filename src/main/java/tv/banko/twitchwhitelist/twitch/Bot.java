@@ -47,7 +47,7 @@ public class Bot {
     public void connect() {
 
         if(credential == null) {
-            setCredential();
+            return;
         }
 
         if(twitchClient != null) {
