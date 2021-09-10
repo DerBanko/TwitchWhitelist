@@ -59,22 +59,11 @@ public class MojangRequest {
             return UUID.fromString(uuid);
         } catch (IllegalArgumentException e) {
 
-            StringBuilder newUUID = new StringBuilder();
-
-            for (int i = 0; i < uuid.length(); i++) {
-                newUUID.append(uuid.charAt(i));
-
-                switch (i) {
-                    case 7:
-                    case 11:
-                    case 15:
-                    case 19:
-                        newUUID.append("-");
-                        break;
-                }
-            }
-
-            return UUID.fromString(newUUID.toString());
+            return UUID.fromString(
+                uuid.replaceFirst(
+                        "(\\p{XDigit}{8})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}+)", "$1-$2-$3-$4-$5"
+                )
+            );
         }
     }
 }
