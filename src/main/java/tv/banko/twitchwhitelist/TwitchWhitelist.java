@@ -29,6 +29,7 @@ public final class TwitchWhitelist extends JavaPlugin {
         this.request = new MojangRequest();
 
         Bukkit.getPluginManager().registerEvents(new PlayerLogin(), this);
+
         getCommand("wl").setExecutor(new WhitelistCommand());
         getCommand("settings").setExecutor(new WhitelistSettingsCommand());
     }
