@@ -47,6 +47,7 @@ public class Bot {
     public void connect() {
 
         if(credential == null) {
+            Bukkit.getLogger().log(Level.WARNING, "There is no access Token set, set it with /settings token <Access Token>");
             return;
         }
 
