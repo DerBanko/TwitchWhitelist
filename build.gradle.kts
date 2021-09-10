@@ -19,14 +19,17 @@ dependencies {
     implementation("com.github.twitch4j:twitch4j:1.5.1")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
 tasks {
     jar {
         enabled = false
     }
     build {
         finalizedBy(shadowJar)
-    }
-    withType<JavaCompile> {
-        options.release.set(11)
     }
 }
