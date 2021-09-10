@@ -1,6 +1,7 @@
 package tv.banko.twitchwhitelist.config;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import tv.banko.twitchwhitelist.TwitchWhitelist;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class TwitchConfig {
     private boolean whitelistWithChannelPoints;
 
     public TwitchConfig() {
-        File dir = new File("./plugins/TwitchWhitelist/");
+        File dir = TwitchWhitelist.getInstance().getDataFolder();
 
         if(!dir.exists()) {
             dir.mkdirs();
